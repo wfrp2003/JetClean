@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jet Clean Refrigeração</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #0b192c;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Contentor principal que simula o layout mobile centralizado no PC */
+        .site-container {
+            position: relative;
+            width: 100%;
+            max-width: 480px;
+            min-height: 100vh;
+            background-image: url('fundo.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 15px 90px 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.8);
+        }
+
+        /* Logotipo */
+        .logo-area {
+            width: 85%;
+            max-width: 350px;
+            text-align: center;
+            margin-top: 10px;
+            z-index: 2;
+        }
+        .logo-area img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Texto de serviços */
+        .services-title {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #000;
+            text-shadow: 0 1px 3px rgba(255,255,255,0.8);
+            margin: 15px 0;
+            z-index: 2;
+        }
+
+        /* Grelha de Eletrodomésticos */
+        .appliances-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            width: 100%;
+            align-items: center;
+            justify-items: center;
+            z-index: 2;
+            margin-bottom: 20px;
+        }
+
+        .item-card {
+            text-align: center;
+        }
+
+        .item-card img {
+            max-width: 120px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+        }
+
+        .item-card span {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #000;
+            margin-top: 5px;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+        }
+
+        /* Secção de Pagamento e Chamada */
+        .info-footer {
+            text-align: center;
+            z-index: 2;
+            margin-bottom: 10px;
+        }
+        .info-footer p {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #000;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+            margin-bottom: 5px;
+        }
+
+        /* Barra Inferior de Botões Fixos */
+        .buttons-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 75px;
+            background: rgba(11, 25, 44, 0.9);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 10;
+            border-top: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .btn-action {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .btn-action:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Efeito de Neve / Nevasca */
+        .snowflake {
+            position: absolute;
+            background: #ffffff;
+            border-radius: 50%;
+            opacity: 0.8;
+            pointer-events: none;
+            animation: fall linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10vh) translateX(0); }
+            100% { transform: translateY(105vh) translateX(15px); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="site-container" id="snow-container">
+        
+        <!-- Logotipo -->
+        <div class="logo-area">
+            <img src="logo.png" alt="Jet Clean Refrigeração">
+        </div>
+
+        <!-- Título -->
+        <div class="services-title">
+            Instalação, manutenção e higienização:
+        </div>
+
+        <!-- Eletrodomésticos -->
+        <div class="appliances-grid">
+            <div class="item-card">
+                <img src="geladeira.png" alt="Geladeira e Freezer">
+                <span>Geladeira / Freezer</span>
+            </div>
+            <div class="item-card">
+                <img src="ar-split.png" alt="Ar Split">
+                <span>Ar Split</span>
+            </div>
+            <div class="item-card">
+                <img src="microondas.png" alt="Micro-ondas">
+                <span>Micro-ondas</span>
+            </div>
+            <div class="item-card">
+                <img src="maquina.png" alt="Máquina de Lavar">
+                <span>Máquina de Lavar</span>
+            </div>
+            <div class="item-card" style="grid-column: span 2;">
+                <img src="ar-janela.png" alt="Ar de Janela">
+                <span>Ar de Janela</span>
+            </div>
+        </div>
+
+        <!-- Rodapé de Ação -->
+        <div class="info-footer">
+            <p>💳 Aceitamos cartões e Pix</p>
+            <p>📅 Agende já sua visita técnica!</p>
+        </div>
+
+        <!-- Barra de Botões Fixos -->
+        <div class="buttons-bar">
+            <a href="https://wa.me/5521992082838?text=Olá!%20Gostaria%20de%20agendar%20uma%20visita%20técnica." target="_blank" class="btn-action">💚 WhatsApp</a>
+            <a href="tel:5521992082838" class="btn-action">📞 Ligar</a>
+            <a href="https://www.instagram.com/jetclean_refrigeracao" target="_blank" class="btn-action">📸 Instagram</a>
+        </div>
+    </div>
+
+    <script>
+        // Gerador de nevasca em tempo real
+        function createSnow() {
+            const container = document.getElementById('snow-container');
+            const numberOfFlakes = 40;
+
+            for (let i = 0; i < numberOfFlakes; i++) {
+                const flake = document.createElement('div');
+                flake.classList.add('snowflake');
+                
+                flake.style.left = Math.random() * 100 + '%';
+                flake.style.top = -10 + 'px';
+                
+                const size = (Math.random() * 4 + 2) + 'px';
+                flake.style.width = size;
+                flake.style.height = size;
+                
+                const duration = (Math.random() * 3 + 2) + 's';
+                flake.style.animationDuration = duration;
+                
+                const delay = (Math.random() * 5) + 's';
+                flake.style.animationDelay = delay;
+                
+                container.appendChild(flake);
+            }
+        }
+        createSnow();
+    </script>
+</body>
+</html>
+
+
