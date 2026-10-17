@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jet Clean Refrigeração</title>
+    <!-- Importação de fonte moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -13,7 +15,7 @@
 
         body {
             background-color: #0b192c;
-            font-family: Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             color: #fff;
             display: flex;
             justify-content: center;
@@ -22,7 +24,6 @@
             overflow-x: hidden;
         }
 
-        /* Contentor principal que simula o layout mobile centralizado no PC */
         .site-container {
             position: relative;
             width: 100%;
@@ -36,10 +37,9 @@
             align-items: center;
             justify-content: space-between;
             padding: 20px 15px 90px 15px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.8);
+            box-shadow: 0 0 30px rgba(0,0,0,0.9);
         }
 
-        /* Logotipo */
         .logo-area {
             width: 85%;
             max-width: 350px;
@@ -52,18 +52,16 @@
             height: auto;
         }
 
-        /* Texto de serviços */
         .services-title {
             text-align: center;
             font-size: 1.2rem;
-            font-weight: bold;
+            font-weight: 800;
             color: #000;
-            text-shadow: 0 1px 3px rgba(255,255,255,0.8);
+            text-shadow: 0 1px 4px rgba(255,255,255,0.9);
             margin: 15px 0;
             z-index: 2;
         }
 
-        /* Grelha de Eletrodomésticos */
         .appliances-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -80,44 +78,43 @@
         }
 
         .item-card img {
-            max-width: 120px;
+            max-width: 105px;
             height: auto;
             display: block;
             margin: 0 auto;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
         }
 
         .item-card span {
             display: block;
             font-size: 0.9rem;
-            font-weight: bold;
+            font-weight: 700;
             color: #000;
-            margin-top: 5px;
-            text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+            margin-top: 6px;
+            text-shadow: 0 1px 3px rgba(255,255,255,0.9);
         }
 
-        /* Secção de Pagamento e Chamada */
         .info-footer {
             text-align: center;
             z-index: 2;
             margin-bottom: 10px;
         }
         .info-footer p {
-            font-size: 1.1rem;
-            font-weight: bold;
+            font-size: 1rem;
+            font-weight: 700;
             color: #000;
-            text-shadow: 0 1px 2px rgba(255,255,255,0.8);
-            margin-bottom: 5px;
+            text-shadow: 0 1px 3px rgba(255,255,255,0.9);
+            margin-bottom: 6px;
         }
 
-        /* Barra Inferior de Botões Fixos */
+        /* Barra Inferior Fixa com Ícones */
         .buttons-bar {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
             height: 75px;
-            background: rgba(11, 25, 44, 0.9);
+            background: rgba(11, 25, 44, 0.96);
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -129,12 +126,13 @@
             flex: 1;
             height: 100%;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-decoration: none;
             color: #fff;
-            font-weight: bold;
-            font-size: 0.9rem;
+            font-weight: 700;
+            font-size: 0.8rem;
             transition: background 0.3s;
         }
 
@@ -142,20 +140,27 @@
             background: rgba(255,255,255,0.1);
         }
 
-        /* Efeito de Neve / Nevasca */
+        .btn-action span.icon {
+            font-size: 1.3rem;
+            margin-bottom: 3px;
+        }
+
+        /* Efeito de Flocos de Neve */
         .snowflake {
             position: absolute;
-            background: #ffffff;
-            border-radius: 50%;
-            opacity: 0.8;
+            background: transparent;
+            color: #ffffff;
+            font-size: 1rem;
+            user-select: none;
             pointer-events: none;
             animation: fall linear infinite;
             z-index: 1;
+            text-shadow: 0 0 5px rgba(255,255,255,0.8);
         }
 
         @keyframes fall {
-            0% { transform: translateY(-10vh) translateX(0); }
-            100% { transform: translateY(105vh) translateX(15px); }
+            0% { transform: translateY(-10vh) translateX(0) rotate(0deg); }
+            100% { transform: translateY(105vh) translateX(20px) rotate(360deg); }
         }
     </style>
 </head>
@@ -163,28 +168,25 @@
 
     <div class="site-container" id="snow-container">
         
-        <!-- Logotipo -->
         <div class="logo-area">
             <img src="logo.png" alt="Jet Clean Refrigeração">
         </div>
 
-        <!-- Título -->
         <div class="services-title">
             Instalação, manutenção e higienização:
         </div>
 
-        <!-- Eletrodomésticos -->
         <div class="appliances-grid">
             <div class="item-card">
                 <img src="geladeira.png" alt="Geladeira e Freezer">
                 <span>Geladeira / Freezer</span>
             </div>
             <div class="item-card">
-                <img src="ar-split.png" alt="Ar Split">
+                <img src="split.png" alt="Ar Split">
                 <span>Ar Split</span>
             </div>
             <div class="item-card">
-                <img src="microondas.png" alt="Micro-ondas">
+                <img src="micro.png" alt="Micro-ondas">
                 <span>Micro-ondas</span>
             </div>
             <div class="item-card">
@@ -192,43 +194,52 @@
                 <span>Máquina de Lavar</span>
             </div>
             <div class="item-card" style="grid-column: span 2;">
-                <img src="ar-janela.png" alt="Ar de Janela">
+                <img src="janela.png" alt="Ar de Janela">
                 <span>Ar de Janela</span>
             </div>
         </div>
 
-        <!-- Rodapé de Ação -->
         <div class="info-footer">
             <p>💳 Aceitamos cartões e Pix</p>
             <p>📅 Agende já sua visita técnica!</p>
         </div>
 
-        <!-- Barra de Botões Fixos -->
+        <!-- Barra inferior com links corrigidos para WhatsApp, Telefone e Instagram -->
         <div class="buttons-bar">
-            <a href="https://wa.me/5521992082838?text=Olá!%20Gostaria%20de%20agendar%20uma%20visita%20técnica." target="_blank" class="btn-action">💚 WhatsApp</a>
-            <a href="tel:5521992082838" class="btn-action">📞 Ligar</a>
-            <a href="https://www.instagram.com/jetclean_refrigeracao" target="_blank" class="btn-action">📸 Instagram</a>
+            <a href="https://wa.me/5521992082838?text=Olá!%20Gostaria%20de%20agendar%20uma%20visita%20técnica." target="_blank" class="btn-action">
+                <span class="icon">💚</span>
+                <span>WhatsApp</span>
+            </a>
+            <a href="tel:5521992082838" class="btn-action">
+                <span class="icon">📞</span>
+                <span>Ligar</span>
+            </a>
+            <a href="https://www.instagram.com/jetclean_refrigeracao" target="_blank" class="btn-action">
+                <span class="icon">📸</span>
+                <span>Instagram</span>
+            </a>
         </div>
     </div>
 
     <script>
-        // Gerador de nevasca em tempo real
+        // Gerador dinâmico de flocos de neve
         function createSnow() {
             const container = document.getElementById('snow-container');
-            const numberOfFlakes = 40;
+            const numberOfFlakes = 30;
+            const symbols = ['❄', '❅', '❆'];
 
             for (let i = 0; i < numberOfFlakes; i++) {
                 const flake = document.createElement('div');
                 flake.classList.add('snowflake');
+                flake.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
                 
                 flake.style.left = Math.random() * 100 + '%';
-                flake.style.top = -10 + 'px';
+                flake.style.top = -20 + 'px';
                 
-                const size = (Math.random() * 4 + 2) + 'px';
-                flake.style.width = size;
-                flake.style.height = size;
+                const size = (Math.random() * 10 + 10) + 'px';
+                flake.style.fontSize = size;
                 
-                const duration = (Math.random() * 3 + 2) + 's';
+                const duration = (Math.random() * 4 + 3) + 's';
                 flake.style.animationDuration = duration;
                 
                 const delay = (Math.random() * 5) + 's';
@@ -241,5 +252,3 @@
     </script>
 </body>
 </html>
-
-
