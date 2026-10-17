@@ -34,13 +34,13 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px 15px 90px 15px;
+            padding: 15px 15px 90px 15px;
             box-shadow: 0 0 30px rgba(0,0,0,0.9);
         }
 
         .logo-area {
-            width: 80%;
-            max-width: 300px;
+            width: 75%;
+            max-width: 280px;
             text-align: center;
             margin-top: 5px;
             z-index: 2;
@@ -50,100 +50,69 @@
             height: auto;
         }
 
-        .services-text {
+        /* Estrutura em Escada / Zigue-Zague para os itens */
+        .stairs-container {
+            width: 100%;
+            margin-top: 15px;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .stair-item {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Alterna os lados da escada */
+        .stair-item.left {
+            justify-content: flex-start;
+        }
+
+        .stair-item.right {
+            justify-content: flex-end;
+        }
+
+        .stair-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+            padding: 8px 12px;
+            border-radius: 12px;
+            max-width: 85%;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .stair-item img {
+            width: 75px;
+            height: auto;
+            filter: drop-shadow(0 3px 6px rgba(0,0,0,0.5));
+            flex-shrink: 0;
+        }
+
+        .stair-text {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.9);
+            line-height: 1.2;
+        }
+
+        /* Bloco de Texto Principal solicitado */
+        .main-services-text {
             text-align: center;
             font-size: 0.95rem;
             font-weight: 700;
             color: #000;
-            text-shadow: 0 1px 3px rgba(255,255,255,0.9);
-            margin: 10px 0 15px 0;
+            text-shadow: 0 1px 4px rgba(255,255,255,0.9);
+            margin: 15px 0;
+            padding: 0 5px;
+            z-index: 2;
             line-height: 1.3;
-            z-index: 2;
-            padding: 0 10px;
-        }
-
-        /* Botões de Contato Principais (Estilo da Arte Original) */
-        .contact-box {
-            width: 100%;
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 10px 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            z-index: 2;
-        }
-
-        .contact-btn {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: #000;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin: 6px 0;
-        }
-
-        .contact-btn img, .contact-btn span.emoji {
-            font-size: 1.5rem;
-            margin-right: 10px;
-        }
-
-        /* Grade de Eletrodomésticos Organizada como no Original */
-        .appliances-section {
-            width: 100%;
-            z-index: 2;
-            margin-top: 5px;
-        }
-
-        .row-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .left-info {
-            flex: 1;
-            padding-right: 10px;
-        }
-
-        .left-info h2 {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: #000;
-            text-shadow: 0 1px 3px rgba(255,255,255,0.9);
-            margin-bottom: 8px;
-            line-height: 1.2;
-        }
-
-        .right-fridge {
-            width: 42%;
-            text-align: center;
-        }
-        .right-fridge img {
-            width: 100%;
-            max-width: 130px;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
-        }
-
-        .grid-middle {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .item-card {
-            text-align: center;
-            width: 30%;
-        }
-        .item-card img {
-            width: 100%;
-            max-width: 100px;
-            height: auto;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
-            display: block;
-            margin: 0 auto;
         }
 
         .info-footer {
@@ -153,14 +122,14 @@
             width: 100%;
         }
         .info-footer p {
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 700;
             color: #000;
             text-shadow: 0 1px 3px rgba(255,255,255,0.9);
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
 
-        /* Barra Inferior Fixa */
+        /* Barra Inferior Fixa com Links Corrigidos */
         .buttons-bar {
             position: absolute;
             bottom: 0;
@@ -221,58 +190,56 @@
             <img src="logo.png" alt="Jet Clean Refrigeração">
         </div>
 
-        <!-- Texto de serviços exato do original -->
-        <div class="services-text">
+        <!-- Texto principal exigido -->
+        <div class="main-services-text">
             instalação, manutenção e higienização de geladeira freezer microondas máquina de lavar ar condicionado split e janela
         </div>
 
-        <!-- Caixa de contato central (igual ao flyer original) -->
-        <div class="contact-box">
-            <a href="https://wa.me/5521992082838?text=Olá!%20Gostaria%20de%20agendar%20uma%20visita%20técnica." target="_blank" class="contact-btn">
-                <span class="emoji">🟢</span>
-                <span style="color: #000; font-size: 1.05rem;">(21) 99208-2838</span>
-            </a>
-            <a href="https://www.instagram.com/jetclean_refrigeracao" target="_blank" class="contact-btn">
-                <span class="emoji">📸</span>
-                <span style="color: #000; font-size: 0.95rem;">jetclean_refrigeracao</span>
-            </a>
-        </div>
-
-        <!-- Seção reorganizada dos eletrodomésticos -->
-        <div class="appliances-section">
-            <div class="row-top">
-                <div class="left-info">
-                    <h2>Agende já sua visita técnica</h2>
-                </div>
-                <div class="right-fridge">
-                    <img src="geladeira.png" alt="Geladeira e Freezer">
+        <!-- Layout em Escada (Zigue-Zague) com as imagens -->
+        <div class="stairs-container">
+            <div class="stair-item left">
+                <div class="stair-content">
+                    <img src="geladeira.png" alt="Geladeira / Freezer">
+                    <span class="stair-text">Geladeira / Freezer</span>
                 </div>
             </div>
 
-            <div class="grid-middle">
-                <div class="item-card">
+            <div class="stair-item right">
+                <div class="stair-content">
                     <img src="split.png" alt="Ar Split">
-                </div>
-                <div class="item-card">
-                    <img src="maquina.png" alt="Máquina de Lavar">
-                </div>
-                <div class="item-card">
-                    <img src="janela.png" alt="Ar de Janela">
+                    <span class="stair-text">Ar Split</span>
                 </div>
             </div>
-            
-            <div style="text-align: center; margin-top: 10px;">
-                <img src="micro.png" alt="Micro-ondas" style="max-width: 110px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));">
+
+            <div class="stair-item left">
+                <div class="stair-content">
+                    <img src="maquina.png" alt="Máquina de Lavar">
+                    <span class="stair-text">Máquina de Lavar</span>
+                </div>
+            </div>
+
+            <div class="stair-item right">
+                <div class="stair-content">
+                    <img src="janela.png" alt="Ar de Janela">
+                    <span class="stair-text">Ar de Janela</span>
+                </div>
+            </div>
+
+            <div class="stair-item left">
+                <div class="stair-content">
+                    <img src="micro.png" alt="Micro-ondas">
+                    <span class="stair-text">Micro-ondas</span>
+                </div>
             </div>
         </div>
 
-        <!-- Rodapé com os textos pedidos -->
+        <!-- Textos Finais -->
         <div class="info-footer">
             <p>💳 Aceitamos cartões e Pix</p>
             <p>📅 Agende já sua visita técnica!</p>
         </div>
 
-        <!-- Barra inferior flutuante de ações rápidas -->
+        <!-- Barra Inferior de Ação (Links corrigidos e funcionais) -->
         <div class="buttons-bar">
             <a href="https://wa.me/5521992082838?text=Olá!%20Gostaria%20de%20agendar%20uma%20visita%20técnica." target="_blank" class="btn-action">
                 <span class="icon">💚</span>
@@ -290,7 +257,7 @@
     </div>
 
     <script>
-        // Efeito de flocos de neve (❄, ❅, ❆)
+        // Flocos de neve ativos
         function createSnow() {
             const container = document.getElementById('snow-container');
             const numberOfFlakes = 25;
