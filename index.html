@@ -17,24 +17,44 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            overflow-x: hidden;
+            overflow: hidden;
+            position: relative;
         }
 
-        /* Contentor principal dimensionado à proporção do flyer */
+        /* Efeito de Neve */
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            background: #ffffff;
+            border-radius: 50%;
+            opacity: 0.8;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10px) translateX(0);
+            }
+            100% {
+                transform: translateY(105vh) translateX(20px);
+            }
+        }
+
         .flyer-container {
             position: relative;
             width: 100%;
             max-width: 480px;
             background-image: url('flyer.jpg.jpeg');
-            background-size: cover;
+            background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
-            /* Proporção vertical exata para o flyer encaixar sem cortes */
             aspect-ratio: 1 / 1.414; 
             box-shadow: 0 0 30px rgba(0,0,0,0.9);
+            z-index: 2;
         }
 
-        /* Áreas Clicáveis Transparentes posicionado exatamente em cima dos botões da imagem */
+        /* Hotspots Clicáveis */
         .hotspot-whatsapp {
             position: absolute;
             bottom: 3.5%;
@@ -69,13 +89,32 @@
 <body>
 
     <div class="flyer-container">
-        <!-- Áreas interativas (links por cima dos botões da imagem do flyer) -->
         <a href="https://wa.me/5521992082838?text=Olá!%20Gostaria%20de%20agendar%20uma%20visita%20técnica." target="_blank" class="hotspot-whatsapp" title="Agendar via WhatsApp"></a>
-        
         <a href="tel:5521992082838" class="hotspot-phone" title="Ligar diretamente"></a>
-        
-        <a href="https://www.instagram.com/jetcleanrefrigeracao" target="_blank" class="hotspot-instagram" title="Visitar Instagram"></a>
+        <a href="https://www.instagram.com/jetclean_refrigeracao" target="_blank" class="hotspot-instagram" title="Visitar Instagram"></a>
     </div>
+
+    <script>
+        // Gerador de flocos de neve
+        function createSnowflake() {
+            const snow = document.createElement('div');
+            snow.classList.add('snowflake');
+            snow.style.left = Math.random() * window.innerWidth + 'px';
+            snow.style.size = Math.random() * 3 + 2 + 'px';
+            const size = Math.random() * 5 + 3 + 'px';
+            snow.style.width = size;
+            snow.style.height = size;
+            snow.style.animationDuration = Math.random() * 3 + 2 + 's';
+            snow.style.opacity = Math.random();
+            document.body.appendChild(snow);
+
+            setTimeout(() => {
+                snow.remove();
+            }, 5000);
+        }
+
+        setInterval(createSnowflake, 150);
+    </script>
 
 </body>
 </html>
