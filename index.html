@@ -14,26 +14,31 @@
         body, html {
             width: 100%;
             height: 100%;
-            background-color: #0b192c;
+            background-color: #0b192c; /* Cor de fundo que serve de extensão natural nas bordas */
+            display: flex;
+            justify-content: center;
+            align-items: center;
             overflow: hidden;
             position: relative;
         }
 
-        /* Imagem preenchendo a tela toda */
+        /* Contendedor com proporção fixa para nunca cortar nem dar zoom excessivo */
         .flyer-container {
-            position: absolute;
-            top: 0;
-            left: 0;
+            position: relative;
             width: 100%;
             height: 100%;
+            max-width: 450px; /* Limita a largura para manter o formato perfeito em telas maiores */
+            max-height: 100vh;
+            aspect-ratio: 1 / 1.414; /* Mantém a proporção exata da arte do flyer */
             background-image: url('flyer.jpg.jpeg');
-            background-size: cover;
+            background-size: 100% 100%;
             background-position: center;
             background-repeat: no-repeat;
+            margin: auto;
             z-index: 1;
         }
 
-        /* Flocos de neve finos caindo por cima da imagem */
+        /* Flocos de neve finos caindo suavemente por cima */
         .snowflake {
             position: absolute;
             top: -10px;
@@ -54,7 +59,7 @@
             }
         }
 
-        /* Hotspots Clicáveis */
+        /* Hotspots Clicáveis alinhados com os botões do flyer */
         .hotspot-whatsapp {
             position: absolute;
             bottom: 3.5%;
@@ -101,7 +106,6 @@
             snow.classList.add('snowflake');
             snow.style.left = Math.random() * window.innerWidth + 'px';
             
-            // Tamanho reduzido para parecerem flocos reais e não bolas grandes
             const size = Math.random() * 3 + 1.5 + 'px'; 
             snow.style.width = size;
             snow.style.height = size;
@@ -115,7 +119,6 @@
             }, 6000);
         }
 
-        // Criar flocos continuamente
         setInterval(createSnowflake, 100);
     </script>
 
